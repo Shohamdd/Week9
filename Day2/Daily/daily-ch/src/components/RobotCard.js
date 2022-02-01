@@ -1,0 +1,44 @@
+import Card from "react-bootstrap/Card";
+
+const RoboCard = ({ robot }) => {
+  return (
+    <div>
+      <Card
+        style={{
+          backgroundColor: "lightblue",
+          fontSize: "13px",
+          width: "180px",
+          height: "270px",
+          margin: "10px",
+        }}
+      >
+        <Card.Img
+          variant="top"
+          style={{
+            width: "120px",
+            margin: "auto",
+            borderRadius: "50%",
+            backgroundColor: "blue",
+            marginTop: "10px",
+          }}
+          src={`https://robohash.org/${robot.id}?size=200x200`}
+        />
+        <Card.Body>
+          <Card.Title>{robot.name}</Card.Title>
+          <Card.Text style={{ fontSize: "0.7em" }}>
+            <p>
+              {" "}
+              Hello I like to be called {robot.username}
+              <br />I work in {robot.company.name} <br />
+              My personal website is: {robot.address.website}
+              <br />
+              My Email is: {robot.email}
+            </p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
+
+export default RoboCard;
